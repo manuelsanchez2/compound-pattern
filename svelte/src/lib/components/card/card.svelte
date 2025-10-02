@@ -1,6 +1,8 @@
 <script lang="ts">
   import type { WithElementRef } from "$lib/utils"
   import type { HTMLAttributes } from "svelte/elements"
+  import { CARD_CTX, type CardContext } from "./card-context"
+  import { setContext } from "svelte"
 
   type Props = WithElementRef<HTMLAttributes<HTMLElement>> & {
     size?: "small" | "medium" | "large" | "container"
@@ -15,11 +17,20 @@
     children,
     ...restProps
   }: Props = $props()
+
+  let titleId = $state<string | null>(null)
+
+  const ctx: CardContext = {
+    setTitleId: (id) => (titleId = id),
+  }
+
+  setContext(CARD_CTX, ctx)
 </script>
 
 <article
   bind:this={ref}
   data-slot="card"
+  aria-labelledby={titleId ?? undefined}
   class={`bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm ${size} ${className}`}
   {...restProps}
 >

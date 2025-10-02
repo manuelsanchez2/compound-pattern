@@ -5,7 +5,7 @@
 
 <div class="wrapper">
   <!-- <Grid.Root min="min-300" gap="lg" align="start"> -->
-  <Card.Root aria-labelledby="sv5-header" variant="elevated" size="large">
+  <Card.Root variant="elevated" size="large">
     <Card.Header>
       <Card.Title id="sv5-header"
         >This is a compound card in Svelte 5</Card.Title
@@ -41,9 +41,9 @@
     </Card.Footer>
   </Card.Root>
 
-  <Card.Root aria-labelledby="sv5-header" variant="elevated" size="medium">
+  <Card.Root variant="elevated" size="medium">
     <Card.Header>
-      <Card.Title id="sv5-header"
+      <Card.Title id="sv5-header-2"
         >This is a compound card in Svelte 5</Card.Title
       >
     </Card.Header>

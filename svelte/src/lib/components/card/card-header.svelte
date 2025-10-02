@@ -9,7 +9,7 @@
   let {
     separated = true,
     ref = $bindable(null),
-    class: className,
+    class: className = "",
     children,
     ...restProps
   }: Props = $props()
